@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/30406409/README.md)
 # FAGI 小红书生态融合智能体
 
 > **F**usion **A**gent **G**roup **I**ntelligence — 七位专家 agent 协作的小红书经营工具箱
@@ -13,7 +12,7 @@ FAGI 是小红书生态经营体系的统一入口。你不需要记住七个工
 - 🧭 **动态导航**：每步完成后根据实际结论推荐下一步，不预设固定流程
 - 🆕 **新手友好**：第一次使用有完整教程，用任务语言描述能力，不展示技术细节
 
-## 七位专家
+## 七位专家 + 更新器
 
 | 专家 | 擅长 | 闭环位置 |
 |---|---|---|
@@ -24,6 +23,7 @@ FAGI 是小红书生态经营体系的统一入口。你不需要记住七个工
 | **合规检测官** | 小红书违禁词 9 大章节 + 广告法增补 + 评分 + OCR | 审查 |
 | **发布前审查官** | 多平台（抖音/小红书/视频号）审稿 + 保意修复 + 个人规则库 | 审查 |
 | **数据复盘师** | 漏斗四层诊断 + 加码/砍掉判断 + 数据仪表盘 | 复盘 |
+| **更新器** | 从 GitHub 同步最新 FAGI，保留用户个人数据 | 维护 |
 
 ## 快速开始
 
@@ -44,28 +44,30 @@ unzip fagi.zip
 ```
 fagi/
 ├── SKILL.md                          # FAGI 主入口（路由器 + 导航器）
-├── xhs-keyword-planner/              # 关键词研究员
+├── fagi-xhs-keyword-planner/         # 关键词研究员
 │   ├── SKILL.md
 │   └── scripts/
-├── xhs-dual-account-strategist/       # 双账号策略师
+├── fagi-xhs-dual-account-strategist/  # 双账号策略师
 │   ├── SKILL.md
 │   ├── scripts/
 │   ├── references/
 │   └── data/
-├── xhs-title-optimizer/              # 标题优化师
+├── fagi-xhs-title-optimizer/          # 标题优化师
 │   └── SKILL.md
-├── xhs-note-writer/                  # 笔记作家
+├── fagi-xhs-note-writer/             # 笔记作家
 │   └── SKILL.md
-├── xhs-compliance-check/            # 合规检测官
+├── fagi-xhs-compliance-check/        # 合规检测官
 │   ├── SKILL.md
 │   └── scripts/
-├── yuwen-publish-precheck/          # 发布前审查官
+├── fagi-yuwen-publish-precheck/       # 发布前审查官
 │   ├── SKILL.md
 │   ├── scripts/
 │   ├── references/
 │   ├── templates/
 │   └── data/
-├── xhs-data-review/                  # 数据复盘师
+├── fagi-xhs-data-review/             # 数据复盘师
+│   └── SKILL.md
+├── fagi-update/                      # 更新器（从 GitHub 同步最新 FAGI）
 │   └── SKILL.md
 ├── LICENSE                           # MIT
 ├── README.md                         # 本文件
@@ -82,8 +84,8 @@ fagi/
 ```bash
 # 示例：创建符号链接加载点
 ln -sfn /path/to/your/project/skills/fagi /path/to/your/project/.workbuddy/skills/fagi
-ln -sfn /path/to/your/project/skills/xhs-keyword-planner /path/to/your/project/.workbuddy/skills/xhs-keyword-planner
-# ... 其余 6 个同理
+ln -sfn /path/to/your/project/skills/fagi-xhs-keyword-planner /path/to/your/project/.workbuddy/skills/fagi-xhs-keyword-planner
+# ... 其余 6 个子 skill + fagi-update 同理
 ```
 
 ## 使用方式
@@ -158,13 +160,14 @@ ln -sfn /path/to/your/project/skills/xhs-keyword-planner /path/to/your/project/.
 
 | skill 目录 | 角色名 | 核心能力 |
 |---|---|---|
-| `xhs-keyword-planner` | 关键词研究员 | 10 维关键词矩阵 + DSO100 搜索量验证 + 账号阶段部署策略 |
-| `xhs-dual-account-strategist` | 双账号策略师 | 3 轮对话 + 双账号策略 + 36 条月度选题 + Excel 导出 |
-| `xhs-title-optimizer` | 标题优化师 | 8 框架首轮 + 75 公式库重试 + Top 3 推荐 |
-| `xhs-note-writer` | 笔记作家 | 5 篇笔记 + 6 类 AI 味清洗 + 关键词密度 + 合规自检 |
-| `xhs-compliance-check` | 合规检测官 | 9 大章节违禁词 + 广告法增补 + 评分 + OCR 图片识别 |
-| `yuwen-publish-precheck` | 发布前审查官 | 多平台逐条判定 + 保意修复 + 个人规则库沉淀 |
-| `xhs-data-review` | 数据复盘师 | 漏斗四层诊断 + 加码/砍掉判断 + HTML 数据仪表盘 |
+| `fagi-xhs-keyword-planner` | 关键词研究员 | 10 维关键词矩阵 + DSO100 搜索量验证 + 账号阶段部署策略 |
+| `fagi-xhs-dual-account-strategist` | 双账号策略师 | 3 轮对话 + 双账号策略 + 36 条月度选题 + Excel 导出 |
+| `fagi-xhs-title-optimizer` | 标题优化师 | 8 框架首轮 + 75 公式库重试 + Top 3 推荐 |
+| `fagi-xhs-note-writer` | 笔记作家 | 5 篇笔记 + 6 类 AI 味清洗 + 关键词密度 + 合规自检 |
+| `fagi-xhs-compliance-check` | 合规检测官 | 9 大章节违禁词 + 广告法增补 + 评分 + OCR 图片识别 |
+| `fagi-yuwen-publish-precheck` | 发布前审查官 | 多平台逐条判定 + 保意修复 + 个人规则库沉淀 |
+| `fagi-xhs-data-review` | 数据复盘师 | 漏斗四层诊断 + 加码/砍掉判断 + HTML 数据仪表盘 |
+| `fagi-update` | 更新器 | 从 GitHub 同步最新 FAGI，保留用户个人数据 |
 
 ## 许可证
 

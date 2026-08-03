@@ -59,7 +59,7 @@ fagi/
 ├── fagi-xhs-compliance-check/        # 合规检测官
 │   ├── SKILL.md
 │   └── scripts/
-├── fagi-yuwen-publish-precheck/       # 发布前审查官
+├── fagi-publish-precheck/       # 发布前审查官
 │   ├── SKILL.md
 │   ├── scripts/
 │   ├── references/
@@ -165,7 +165,7 @@ ln -sfn /path/to/your/project/skills/fagi-xhs-keyword-planner /path/to/your/proj
 | `fagi-xhs-title-optimizer` | 标题优化师 | 8 框架首轮 + 75 公式库重试 + Top 3 推荐 |
 | `fagi-xhs-note-writer` | 笔记作家 | 5 篇笔记 + 6 类 AI 味清洗 + 关键词密度 + 合规自检 |
 | `fagi-xhs-compliance-check` | 合规检测官 | 9 大章节违禁词 + 广告法增补 + 评分 + OCR 图片识别 |
-| `fagi-yuwen-publish-precheck` | 发布前审查官 | 多平台逐条判定 + 保意修复 + 个人规则库沉淀 |
+| `fagi-publish-precheck` | 发布前审查官 | 多平台逐条判定 + 保意修复 + 个人规则库沉淀 |
 | `fagi-xhs-data-review` | 数据复盘师 | 漏斗四层诊断 + 加码/砍掉判断 + HTML 数据仪表盘 |
 | `fagi-update` | 更新器 | 从 GitHub 同步最新 FAGI，保留用户个人数据 |
 
